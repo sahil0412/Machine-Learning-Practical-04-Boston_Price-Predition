@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: RandomForestRegressorProject
+Version: 0.0.1
+Author: sahil
+Author-email: sahilaggarwal.it20@gmail.com
+Requires-Dist: numpy
+Requires-Dist: pandas
+Requires-Dist: seaborn
+Requires-Dist: matplotlib
+Requires-Dist: scikit-learn
+Requires-Dist: flask
+Requires-Dist: PyYAML
+Requires-Dist: gunicorn
