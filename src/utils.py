@@ -22,27 +22,17 @@ def save_object(file_path, obj):
 
 def evaluate_model(X_train,y_train,X_test,y_test,model):
     try:
-        # report = {}
-        # for i in range(len(models)):
-        #     model = list(models.values())[i]
-        #     # Train model
-        #     model.fit(X_train,y_train)
-
-            
-
-        #     # Predict Testing data
-        #     y_test_pred =model.predict(X_test)
-
-        #     # Get R2 scores for train and test data
-        #     #train_model_score = r2_score(ytrain,y_train_pred)
-        #     test_model_score = r2_score(y_test,y_test_pred)
-
-        #     report[list(models.keys())[i]] =  test_model_score
-
-        # return report
         model.fit(X_train, y_train)
+        y_pred = model.predict(X_train)
         print('Training Score : ', model.score(X_train, y_train))
         print('Testing Score  : ', model.score(X_test, y_test))
+
+
+        print('R^2:',r2_score(y_train, y_pred))
+        print('Adjusted R^2:',1 - (1-r2_score(y_train, y_pred))*(len(y_train)-1)/(len(y_train)-X_train.shape[1]-1))
+        print('MAE:',mean_absolute_error(y_train, y_pred))
+        print('MSE:',mean_squared_error(y_train, y_pred))
+        print('RMSE:',np.sqrt(mean_squared_error(y_train, y_pred)))
         # Predict Testing data
         y_test_pred =model.predict(X_test)
         r2 = r2_score(y_test, y_test_pred)
