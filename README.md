@@ -90,7 +90,7 @@ After creating model ,we integrate that model with beautiful UI. for the UI part
 
 ### 7. Model Conclusion
 
-Model predict 0.62 accurately on test data(R2 Score).
+Model predict 0.96 accurately on test data(R2 Score).
 
 ### 8. Project Innovation
 a. Easy to use<br>
